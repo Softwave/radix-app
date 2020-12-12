@@ -1,0 +1,195 @@
+html {
+    height: 100%;
+    background-attachment: fixed;
+}
+  
+body {
+  margin: 0 auto;
+  max-width: 30em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  background: linear-gradient(#e66465, #9198e5);
+  background-attachment: fixed;
+}
+
+.App {
+    display: inline-flexbox;
+}
+
+@media screen and (orientation: portrait) {
+    .App {
+        margin-inline-start: 1em;
+        margin-inline-end: 1em;
+    }
+    
+}
+
+.App-header {
+    text-align: center;
+}
+.App-title {
+    font-size: 3em;
+    margin-bottom: 0px;
+    margin-top: 0.1em;
+}
+
+.App-input {
+    -webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    border-radius: 0px;
+    border: 3px solid #000000;
+	color: #000000;
+	font-size: 22px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+    margin-top: 0px;
+    display: block;
+    text-align: center;
+	width: 100%;
+    font-family: Helvetica;
+    float: right;
+}
+
+.App-outputbar {
+    -webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    border-radius: 0px;
+    border: 3px solid #000000;
+	color: #000000;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+    margin-top: 0px;
+    display: block;
+    text-align: center;
+	width: 100%;
+    font-family: Helvetica;
+    float: right;
+    height: 40px;
+}
+
+.App-output {
+    font-size: 22px;
+    display: block;
+    margin-top: 0px;
+    text-align: left;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.App-inputvalue {
+    -webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    border-radius: 0px;
+    border: 3px solid #000000;
+	color: #000000;
+	font-size: 22px;
+	background: #fff;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+    margin-top: 0.5em;
+    display: block;
+    text-align: center;
+	width: 45%;
+    font-family: Helvetica;
+    float: right;
+}
+
+
+.Button-button {
+    -webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	color: #ffffff;
+	font-size: 22px;
+	background: #000000;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+    margin-top: 0.5em;
+    text-align: center;
+	width: 45%;
+    border: 3px solid #000000;
+    font-family: Helvetica;
+}
+.Button-button:hover {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	background:#4a4edd;
+    border-width: 0px;
+    border: 3px solid #ff00aa;
+}
+.Button-button:active {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	background: #ff0099;
+	text-decoration: none;
+    border: 3px solid #4a4edd;
+}
+
+.Button-button2 {
+    -webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	color: #ffffff;
+	font-size: 22px;
+	background: #000000;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	box-sizing: border-box;
+    margin-top: 0.5em;
+    display: inline;
+    text-align: center;
+	width: 45%;
+    border: 3px solid #000000;
+    font-family: Helvetica;
+}
+.Button-button2:hover {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	background:#4a4edd;
+	border: 3px solid #ff0099;
+}
+.Button-button2:active {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	background: #ff0099;
+	text-decoration: none;
+	border: 3px solid #4a4edd;
+}
+
+.btnLeft {
+    float: left;
+}
+
+.btnRight {
+    float: right;
+}
+
+.Label-input {
+    margin-bottom: 0px;
+    float: left;
+    margin-top: 10px;
+}
+
+.topForm {
+    padding-bottom: 2em;
+    border-bottom: 2px solid #000000;
+    display: inline-block;
+}
+
+#Button-convert {
+    float: left;
+}

@@ -1,0 +1,30 @@
+<template>
+  <require from="./styles.css"></require>
+  <header class="App-header">
+    <h1 class="App-title">Radix</h1>
+  </header>
+
+    <div class="App">
+      <div class="topForm">
+        <h2 class="Label-input">Input</h2>
+        <input type="string" id="user-input" value.bind="inputValueString" class="App-input"></input>
+        <button id="Button-convert" click.trigger="convert()" class="Button-button">Convert</button>
+        <input type="number" min="2" max="16" value.bind="inputBase" class="App-inputvalue"></input>
+      </div>
+    
+      <h2 class="Label-input">Decimal</h2>
+      <input type="number" id="outputDecimal" value.bind="outputDecimal" class="App-input"></input>
+      <button id="Button-copydecimal" click.trigger="copyDecimal()" class="Button-button">Copy</button><br/>
+    
+      <h2 class="Label-input">Binary</h2>
+      <input type="string" id="outputBinary" value.bind="outputBinary" class="App-input"></input>
+      <button id="Button-copybinary" click.trigger="copyBinary()" class="Button-button">Copy</button><br/>
+    
+      <h2 class="Label-input">Hexadecimal</h2>
+      <input type="string" id="outputHex" value.bind="outputHex" class="App-input"></input>
+      <button id="Button-copyhex" click.trigger="copyHex()" class="Button-button">Copy</button><br/>
+
+  </div>
+
+  
+</template>
