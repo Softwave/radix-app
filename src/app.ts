@@ -15,40 +15,19 @@ export class App {
 
   
 
-  async copyDecimal() {
-    if (!navigator.clipboard) {
-      return;
-    }
-    const clipText = this.outputDecimal.toString();
-    try {
-      await navigator.clipboard.writeText(clipText);
-    } catch (err) {
-      console.error('Failed to copy!', err);
-    }
+  copyDecimal() {
+    let clip = new Clippy();
+    clip.copy(this.outputDecimal.toString(), "#outputDecimal");
   }
 
-  async copyBinary() {
-    if (!navigator.clipboard) {
-      return;
-    }
-    const clipText = this.outputBinary;
-    try {
-      await navigator.clipboard.writeText(clipText);
-    } catch (err) {
-      console.error('Failed to copy!', err);
-    }
+  copyBinary() {
+    let clip = new Clippy();
+    clip.copy(this.outputBinary, "#outputBinary");
   }
 
-  async copyHex() {
-    if (!navigator.clipboard) {
-      return;
-    }
-    const clipText = this.outputHex;
-    try {
-      await navigator.clipboard.writeText(clipText);
-    } catch (err) {
-      console.error('Failed to copy!', err);
-    }
+  copyHex() {
+    let clip = new Clippy();
+    clip.copy(this.outputHex, "#outputHex");
   }
 
   convert() {
@@ -62,5 +41,53 @@ export class App {
     
   }
 
+  
+
 
 }
+
+class Clippy {
+  copy(inputText:string, elementID:string) {
+    try {
+      if ((navigator as any).clipboard) {
+        (navigator as any).clipboard.writeText(inputText);
+      } else if ((window as any).clipboardData) {  // IE
+        (window as any).clipboardData.setData('text', inputText);
+      } else {  // other browsers, iOS, Mac OS
+        let element = document.querySelector(elementID) as HTMLInputElement;
+        this.copyToClipboard(element);
+      }
+      //this.tooltipText = 'Copied to Clipboard.';  // copy succeed.
+    } catch (e) {
+     // this.tooltipText = 'Please copy coupon manually.';  // copy failed.
+    }
+  }
+
+  private copyToClipboard(el: HTMLInputElement) {
+    const oldContentEditable = el.contentEditable;
+    const oldReadOnly = el.readOnly;
+
+    try {
+      el.contentEditable = 'true';  // specific to iOS
+      el.readOnly = false;
+      this.copyNodeContentsToClipboard(el);
+    } finally {
+      el.contentEditable = oldContentEditable;
+      el.readOnly = oldReadOnly;
+    }
+  }
+
+  private copyNodeContentsToClipboard(el: HTMLInputElement) {
+    const range = document.createRange();
+    const selection = window.getSelection();
+    range.selectNodeContents(el);
+    selection.removeAllRanges();
+
+    selection.addRange(range);
+    el.setSelectionRange(0, 999999);
+
+    document.execCommand('copy');
+  }
+}
+
+
