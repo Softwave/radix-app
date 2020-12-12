@@ -13,6 +13,8 @@ export class App {
     return (dec >>> 0).toString(base);
   }
 
+  
+
   async copyDecimal() {
     if (!navigator.clipboard) {
       return;

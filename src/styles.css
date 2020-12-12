@@ -1,7 +1,6 @@
 html {
     height: 100%;
-    background-attachment: fixed;
-    background: #e66465;
+    background: linear-gradient(#e66465, #9198e5);
 }
   
 body {
@@ -17,6 +16,9 @@ body {
 }
 
 @media screen and (orientation: portrait) {
+    html {
+        background: #e66465;
+    }
     .App {
         margin-inline-start: 1em;
         margin-inline-end: 1em;
