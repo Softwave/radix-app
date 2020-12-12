@@ -56,7 +56,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "deploy": "ghpages -d dist",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --env.production --extractCss",
     "start": "webpack-dev-server --extractCss",
     "build:dev": "webpack --extractCss",
