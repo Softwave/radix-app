@@ -1,5 +1,19 @@
 html {
+    min-height: 100%;
+    background: linear-gradient(#e66465, #9198e5);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html:after {
     height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
     background: linear-gradient(#e66465, #9198e5);
 }
   
@@ -7,8 +21,7 @@ body {
   margin: 0 auto;
   max-width: 30em;
   font-family: "Helvetica", "Arial", sans-serif;
-  background: linear-gradient(#e66465, #9198e5);
-  background-attachment: fixed;
+
 }
 
 .App {
@@ -18,6 +31,10 @@ body {
 @media screen and (orientation: portrait) {
     html {
         background: #e66465;
+    }
+    body { 
+        background: linear-gradient(#e66465, #9198e5);
+        background-attachment: fixed;
     }
     .App {
         margin-inline-start: 1em;
