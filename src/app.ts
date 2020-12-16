@@ -1,19 +1,18 @@
 export class App {
-  // Input values 
-  public inputValue:number = 10; 
-  public inputValueString:string = "10";
-  public inputBase:number = 10; 
+  // Input values
+  public inputValue: number = 10;
+  public inputValueString: string = "10";
+  public inputBase: number = 10;
 
-  public outputDecimal:number = 0;
-  public outputDecimalString:string = "0";
-  public outputBinary:string = "0";
-  public outputHex:string = "0x0";
+  public outputDecimal: number = 0;
+  public outputDecimalString: string = "0";
+  public outputBinary: string = "0";
+  public outputHex: string = "0x0";
 
-  dec2bin(dec:number, base:number) {
+  dec2bin(dec: number, base: number) {
+    ///
     return (dec >>> 0).toString(base);
   }
-
-  
 
   copyDecimal() {
     let clip = new Clippy();
@@ -38,28 +37,25 @@ export class App {
     } else {
       alert("You have entered an invalid input; try again.");
     }
-    
   }
-
-  
-
-
 }
 
 class Clippy {
-  copy(inputText:string, elementID:string) {
+  copy(inputText: string, elementID: string) {
     try {
       if ((navigator as any).clipboard) {
         (navigator as any).clipboard.writeText(inputText);
-      } else if ((window as any).clipboardData) {  // IE
-        (window as any).clipboardData.setData('text', inputText);
-      } else {  // other browsers, iOS, Mac OS
+      } else if ((window as any).clipboardData) {
+        // IE
+        (window as any).clipboardData.setData("text", inputText);
+      } else {
+        // other browsers, iOS, Mac OS
         let element = document.querySelector(elementID) as HTMLInputElement;
         this.copyToClipboard(element);
       }
       //this.tooltipText = 'Copied to Clipboard.';  // copy succeed.
     } catch (e) {
-     // this.tooltipText = 'Please copy coupon manually.';  // copy failed.
+      // this.tooltipText = 'Please copy coupon manually.';  // copy failed.
     }
   }
 
@@ -68,7 +64,7 @@ class Clippy {
     const oldReadOnly = el.readOnly;
 
     try {
-      el.contentEditable = 'true';  // specific to iOS
+      el.contentEditable = "true"; // specific to iOS
       el.readOnly = false;
       this.copyNodeContentsToClipboard(el);
     } finally {
@@ -86,8 +82,6 @@ class Clippy {
     selection.addRange(range);
     el.setSelectionRange(0, 999999);
 
-    document.execCommand('copy');
+    document.execCommand("copy");
   }
 }
-
-
